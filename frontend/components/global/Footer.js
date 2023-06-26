@@ -60,7 +60,7 @@ const Footer = () => {
         <div className="row footer-padding">
           <div className="col-lg-4 col-md-6 mb-4 mb-lg-0">
             <div className="footer__logo">
-              <h1>Oberoi.</h1>
+              <h1>Oswaal.</h1>
             </div>
           </div>
           <div className="col-lg-4 col-md-6 mb-4 mb-lg-0">

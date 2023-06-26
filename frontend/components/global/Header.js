@@ -8,7 +8,7 @@ const Header = () => {
       <div className="container">
         <Navbar className="p-0" bg="none" expand="lg">
           <Link className="navbar-brand" href="/">
-            <h2 className="logo">Oberoi.</h2>
+            <h2 className="logo">Oswaal.</h2>
           </Link>
           <Navbar.Toggle
             className="navbar-toggler collapsed"
@@ -46,35 +46,13 @@ const Header = () => {
                 </Link>
               </li>
             </ul>
-            <ul className="navbar-nav navbar__right d-block d-lg-none">
-              <li className="nav-item">
-                <Link className="nav-link" href="mailto:admin@gmail.com">
-                  <MdOutlineMailOutline /> admin@gmail.com
-                </Link>
-              </li>
-              <li className="nav-item">
-                <Link className="nav-link" href="tel:0123456789">
-                  <MdCall /> 0123456789
-                </Link>
-              </li>
-            </ul>
           </Navbar.Collapse>
 
           <ul className="navbar-nav navbar__right d-none d-lg-flex gap-2">
-            <li className="nav-item">
-              <Link
-                className="nav-link d-flex gap-2 align-items-center"
-                href="mailto:admin@gmail.com"
-              >
-                <MdOutlineMailOutline /> admin@gmail.com
-              </Link>
-            </li>
-            <li className="nav-item">
-              <Link
-                className="nav-link d-flex gap-2 align-items-center"
-                href="tel:0123456789"
-              >
-                <MdCall /> 0123456789
+            {/* Contact Cta Button */}
+            <li>
+              <Link href="/contact" className="button-secondary">
+                Contact us
               </Link>
             </li>
           </ul>

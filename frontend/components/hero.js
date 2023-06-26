@@ -1,11 +1,12 @@
+import Link from "next/link";
 import { useRouter } from "next/router";
 import React, { useState } from "react";
 import { Tab, Tabs } from "react-bootstrap";
 import { BsSearch } from "react-icons/bs";
 
-const Hero = ({data}) => {
-  console.log(data)
-  console.log(data[0].attributes.BannerText)
+const Hero = ({ data }) => {
+  console.log(data);
+  console.log(data[0].attributes.BannerText);
   const router = useRouter();
   const [key, setKey] = useState("rent");
   const [query, setQuery] = useState("");
@@ -21,51 +22,21 @@ const Hero = ({data}) => {
     router.push(`/search-sale?query=${query}`);
   };
 
-  
-
   return (
     <div className="hero">
       <div className="container">
         <div className="row align-items-center">
           <div className="col-lg-6">
-            {/* <h1 className="display-3">Find your dream home now</h1> */}
             <h1 className="display-3">{data[0].attributes.BannerText}</h1>
-            {/* <h3 className="mb-5 fs-5">
-              We helps people to getting home and renting with good price
-            </h3> */}
-            <h3 className="mb-5 fs-5">
-              {data[0].attributes.BannerSubtitle}
-            </h3>
-            <Tabs
-              id="controlled-tab-example-hero"
-              activeKey={key}
-              onSelect={(k) => setKey(k)}
-            >
-              <Tab eventKey="rent" title="For-Rent">
-                <form className="hero__search" onSubmit={submitHandlerRent}>
-                  <input
-                    onChange={querySearchHandler}
-                    type="text"
-                    placeholder="Search..."
-                  />
-                  <button type="submit" aria-label="Search for-rent">
-                    <BsSearch />
-                  </button>
-                </form>
-              </Tab>
-              <Tab eventKey="sale" title="For-Sale">
-                <form className="hero__search" onSubmit={submitHandlerSale}>
-                  <input
-                    onChange={querySearchHandler}
-                    type="text"
-                    placeholder="Search..."
-                  />
-                  <button type="submit" aria-label="Search for-sale">
-                    <BsSearch />
-                  </button>
-                </form>
-              </Tab>
-            </Tabs>
+            <h3 className="mb-5 fs-5">{data[0].attributes.BannerSubtitle}</h3>
+            <div className="hero-button">
+              <Link href="/contact" className="button-secondary">
+                Get Your Home
+              </Link>
+              <Link href="/all-property" className="button-secondary">
+                Projects
+              </Link>
+            </div>
           </div>
           <div className="col-lg-6">
             <div className="hero__image">

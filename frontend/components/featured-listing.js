@@ -4,18 +4,21 @@ import SectionTitle from "./global/section-title";
 import PropertyCard from "./property-card";
 
 const FeaturedListing = ({ data }) => {
-  const [key, setKey] = useState("rent");
+  console.log(data);
+  const [key, setKey] = useState("commercial");
   const featured = data?.filter(
     (property) => property.attributes.propertyType === "featured"
   );
 
-  const propertyRent = featured?.filter(
+  const propertyCommercial = featured?.filter(
     (property) =>
-      property.attributes.categories.data[0]?.attributes.categoryname === "rent"
+      property.attributes.categories.data[0]?.attributes.categoryname ===
+      "Commercial"
   );
-  const propertySale = featured?.filter(
+  const propertyResidential = featured?.filter(
     (property) =>
-      property.attributes.categories.data[0]?.attributes.categoryname === "sale"
+      property.attributes.categories.data[0]?.attributes.categoryname ===
+      "residential"
   );
 
   return (
@@ -28,22 +31,22 @@ const FeaturedListing = ({ data }) => {
             onSelect={(k) => setKey(k)}
             id="controlled-tab-example-listing"
           >
-            <Tab eventKey="rent" title="Residential">
+            <Tab eventKey="commercial" title="Commercial">
               <div className="row justify-content-center">
                 {data === null || undefined || 0 ? (
                   <span className="error">property not available for rent</span>
                 ) : null}
-                {propertyRent?.slice(0, 3).map((property) => (
+                {propertyCommercial?.slice(0, 3).map((property) => (
                   <PropertyCard property={property} key={property.id} />
                 ))}
               </div>
             </Tab>
-            <Tab eventKey="sale" title="Commercial">
+            <Tab eventKey="residential" title="Residential">
               <div className="row justify-content-center">
                 {data === null || undefined || 0 ? (
                   <span className="error">property not available for sale</span>
                 ) : null}
-                {propertySale?.slice(0, 3).map((property) => (
+                {propertyResidential?.slice(0, 3).map((property) => (
                   <PropertyCard property={property} key={property.id} />
                 ))}
               </div>

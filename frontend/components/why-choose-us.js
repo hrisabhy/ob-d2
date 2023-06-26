@@ -12,8 +12,8 @@ const WhyChooseUs = () => {
         <div className="row">
           <div className="col-lg-4 col-md-6 mb-4 mb-lg-0">
             <div className="wChoose__intro">
-              <SectionTitle title="Why Choose Reala" position="left" />
-              <p className="fs-4">keep calm, and reala on.</p>
+              <SectionTitle title="Why Choose Oswaal" position="left" />
+              <p className="fs-4">keep calm, and choose us.</p>
               <p>
                 Lorem ipsum dolor sit, amet consectetur adipisicing elit.
                 Voluptatem distinctio illum iure deserunt eum mollitia.

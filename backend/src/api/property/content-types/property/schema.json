@@ -89,6 +89,16 @@
     },
     "date": {
       "type": "date"
+    },
+    "FloorPlan": {
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ],
+      "type": "media",
+      "multiple": false
     }
   }
 }

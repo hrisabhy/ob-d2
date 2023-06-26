@@ -1,6 +1,6 @@
 .testimonial {
   &__item {
-    background-color: $color-light;
+    background-color: $color-tertiary;
     padding: 30px;
     border-radius: 5px;
     @include media-breakpoint-down(lg) {

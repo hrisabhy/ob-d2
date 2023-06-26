@@ -43,6 +43,7 @@ const PropertyPage = ({ properties, slug }) => {
     propertyFeature,
     propertyType,
     categories,
+    FloorPlan,
   } = property[0]?.attributes;
 
   const relatedProperty = properties?.filter(
@@ -78,7 +79,7 @@ const PropertyPage = ({ properties, slug }) => {
                     slidesPerView: 3,
                   },
                   1200: {
-                    slidesPerView: 1,
+                    slidesPerView: 2,
                   },
                 }}
               >
@@ -93,11 +94,13 @@ const PropertyPage = ({ properties, slug }) => {
                   </SwiperSlide>
                 ))}
               </Swiper>
-              <div className="prev">
-                <MdOutlineKeyboardArrowLeft />
-              </div>
-              <div className="next">
-                <MdOutlineNavigateNext />
+              <div className="parent-container">
+                <div className="prev">
+                  <MdOutlineKeyboardArrowLeft />
+                </div>
+                <div className="next">
+                  <MdOutlineNavigateNext />
+                </div>
               </div>
             </div>
           </div>
@@ -106,7 +109,7 @@ const PropertyPage = ({ properties, slug }) => {
               <h3>
                 {title} <span>{propertyType}</span>
               </h3>
-              <span className="price">${price}</span>
+              <span className="price">Rs {price}</span>
               <ul>
                 <li>
                   <GoLocation /> {location}
@@ -154,13 +157,6 @@ const PropertyPage = ({ properties, slug }) => {
                         </li>
                         <li>
                           <span>
-                            <GiMechanicGarage />
-                            Garages
-                          </span>{" "}
-                          <span>2</span>
-                        </li>
-                        <li>
-                          <span>
                             <FaVoteYea />
                             Built Year
                           </span>{" "}
@@ -205,6 +201,20 @@ const PropertyPage = ({ properties, slug }) => {
                             </li>
                           ))}
                         </ul>
+                      </div>
+                    </div>
+                  )}
+                  {FloorPlan?.data?.attributes && (
+                    <div className="description-card">
+                      <div className="description-card__header">
+                        <h4>Floor Plan</h4>
+                      </div>
+                      <div className="description-card__body">
+                        <img
+                          className="floor-plan__image"
+                          src={`${API_URL}${FloorPlan.data.attributes.url}`}
+                          alt="Floorplan"
+                        />
                       </div>
                     </div>
                   )}

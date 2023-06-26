@@ -7,7 +7,7 @@ import { Swiper, SwiperSlide } from "swiper/react";
 
 const Testimonial = () => {
   return (
-    <div className="testimonial section-padding section-bg">
+    <div className="testimonial section-padding">
       <div className="container">
         <SectionTitle title="What people said about Reala" />
         <div className="rwo">
@@ -20,7 +20,7 @@ const Testimonial = () => {
                 768: {
                   slidesPerView: 2,
                   spaceBetween: 20,
-                }
+                },
               }}
             >
               <SwiperSlide>

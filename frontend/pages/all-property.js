@@ -42,6 +42,17 @@ const AllProperty = ({ property }) => {
       property.attributes.categories.data[0]?.attributes.categoryname === "sale"
   );
 
+  const propertyCommercial = data?.filter(
+    (property) =>
+      property.attributes.categories.data[0]?.attributes.categoryname ===
+      "Commercial"
+  );
+  const propertyResidential = data?.filter(
+    (property) =>
+      property.attributes.categories.data[0]?.attributes.categoryname ===
+      "residential"
+  );
+
   // Pagination
   const [currentPage, setCurrentPage] = useState(1);
   const [postsPerPage] = useState(6);
@@ -131,26 +142,22 @@ const AllProperty = ({ property }) => {
                     ""
                   )}
                 </Tab>
-                <Tab eventKey="rent" title="Rent">
+                <Tab eventKey="commercial" title="Commercial">
                   <div className="row">
                     {data === null || undefined || 0 ? (
-                      <span className="error">
-                        Property not available for rent
-                      </span>
+                      <span className="error">Property not available</span>
                     ) : null}
-                    {propertyRent?.map((property) => (
+                    {propertyCommercial?.map((property) => (
                       <PropertyCard property={property} key={property.id} />
                     ))}
                   </div>
                 </Tab>
-                <Tab eventKey="sale" title="Sale">
+                <Tab eventKey="residential" title="Residential">
                   <div className="row">
                     {data === null || undefined || 0 ? (
-                      <span className="error">
-                        Property not available for Sale
-                      </span>
+                      <span className="error">Property not available</span>
                     ) : null}
-                    {propertySale?.map((property) => (
+                    {propertyResidential?.map((property) => (
                       <PropertyCard property={property} key={property.id} />
                     ))}
                   </div>
