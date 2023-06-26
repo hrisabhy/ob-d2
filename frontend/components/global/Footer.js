@@ -68,7 +68,9 @@ const Footer = () => {
               <h3>Our Address</h3>
               <ul>
                 <li>
-                  329 Queensberry Street, North Melbourne VIC 3051, Australia.
+                  Lorem Ipsum is simply dummy text of the printing and
+                  typesetting industry. Lorem Ipsum has been the industry's
+                  standard dummy text ever since the 1500s,
                 </li>
                 <li>
                   <GoLocation />{" "}

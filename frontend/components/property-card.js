@@ -22,7 +22,7 @@ const PropertyCard = ({ property }) => {
   return (
     <div className="col-md-6 col-lg-4 mb-4 property">
       <div className="featured-list__item">
-        <div className="featured-list__item--image" >
+        <div className="featured-list__item--image">
           <img
             className="img-fluid"
             src={
@@ -35,7 +35,6 @@ const PropertyCard = ({ property }) => {
           {propertyType !== null && (
             <div className="popular">{propertyType}</div>
           )}
-          <div className="price">${price} / month</div>
         </div>
         <div className="featured-list__item__info">
           <div className="featured-list__item__info--title">
